@@ -69,7 +69,7 @@ def Row(nest: (RowParam | Node)*) =
   )
 end Row
 
-def Text(params: TextParam*) =
+def Box(params: TextParam*) =
   Node(
     topo = 0,
     NodeType.Text(params.toList),

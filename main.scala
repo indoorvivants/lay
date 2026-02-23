@@ -11,13 +11,13 @@ import lay.*
         Row(
           ChildGap(3),
           Padding(2, 2, 2, 2),
-          Text(Width(30), Height(5)),
-          Text(Width(30), Height(5)),
-          Text(Width(30), Height(5))
+          Box(Width(30), Height(5)),
+          Box(Width(30), Height(5)),
+          Box(Width(11), Height(5))
         ),
         Row(
           Padding(4, 4, 4, 4),
-          Text(Width(37), Height(10))
+          Box(Width(37), Height(10))
         )
       )
     )
