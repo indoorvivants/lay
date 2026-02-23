@@ -34,12 +34,10 @@ def Column(nest: (ColumnParam | Node)*) =
   val base = Node(
     topo = 0,
     NodeType.Column(params),
-    // None,
     Nil
   )
   val children = getChildren(nest.toList).zipWithIndex.map((n, i) =>
     n.copy(
-      // parent = Some(base),
       topo = i
     )
   )
@@ -163,11 +161,6 @@ def positioning(root: Node, sizing: Map[Node, Size]): Map[Node, Position] =
     val Position(startX, startY) = position
     n.tpe match
       case lay.NodeType.Column(_params) =>
-        // for
-        //   x <- startX until startX + sizing(n).width
-        //   y <- startY until startY + sizing(n).height
-        // do canvas(y)(x) = fansi.Color.Blue("C").render
-
         val posX = startX + n.tpe.params.padding.left
         var posY = startY + n.tpe.params.padding.top
         val childGap = n.tpe.params.childGap
